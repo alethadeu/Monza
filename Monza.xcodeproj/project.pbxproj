@@ -60,6 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EFE83A2A2314417E000A79D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EFF1131023104BDF0044BB31 /* Info.plist */,
+				EFF1130F23104BDF0044BB31 /* Monza.h */,
+				EFF1132B231057C40044BB31 /* Fonts */,
+				EFF1132C231057CA0044BB31 /* Colors */,
+				EFF1132D231057D40044BB31 /* Components */,
+				EFF1132E231059240044BB31 /* Utils */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		EFF1130223104BDF0044BB31 = {
 			isa = PBXGroup;
 			children = (
@@ -81,12 +94,7 @@
 		EFF1130E23104BDF0044BB31 /* Monza */ = {
 			isa = PBXGroup;
 			children = (
-				EFF1132E231059240044BB31 /* Utils */,
-				EFF1132D231057D40044BB31 /* Components */,
-				EFF1132C231057CA0044BB31 /* Colors */,
-				EFF1132B231057C40044BB31 /* Fonts */,
-				EFF1130F23104BDF0044BB31 /* Monza.h */,
-				EFF1131023104BDF0044BB31 /* Info.plist */,
+				EFE83A2A2314417E000A79D1 /* Resources */,
 			);
 			path = Monza;
 			sourceTree = "<group>";

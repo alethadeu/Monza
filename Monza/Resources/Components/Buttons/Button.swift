@@ -8,14 +8,13 @@
 
 import UIKit
 
+@IBDesignable
 open class Button: UIButton {
     
-    @IBInspectable private var type: Int {
-        set {
-            self.type = newValue
-        }
-        get {
-            return self.type
+    var _style = ButtonStyleId.whiteBlueButton
+    @IBInspectable var type: Int = ButtonStyleId.whiteBlueButton.rawValue {
+        didSet {
+            self._style = ButtonStyleId(rawValue: self.type) ?? .whiteBlueButton
         }
     }
     
@@ -30,27 +29,22 @@ open class Button: UIButton {
     }
     
     func setup() {
-        switch type {
-        case 0:
+        switch _style {
+        case .whiteBlueButton:
             let button = WhiteBlueButtonStyle()
             button.setup(button: self)
         
-        case 1:
+        case .blueButton:
             let button = BlueButtonStyle()
             button.setup(button: self)
         
-        case 2:
+        case .whiteOrangeButton:
             let button = WhiteOrangeButtonStyle()
             button.setup(button: self)
             
-        case 3:
+        case .orangeButton:
             let button = OrangeButtonStyle()
-            button.setup(button: self)
-            
-        default:
-            let button = WhiteBlueButtonStyle()
             button.setup(button: self)
         }
     }
-
 }

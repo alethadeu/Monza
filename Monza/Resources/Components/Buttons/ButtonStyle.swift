@@ -15,6 +15,11 @@ import Foundation
 /// - whiteOrange: estilo para botão com fundo branco, e detalhes em laranja (orangeOne)
 /// - blue: estilo para botão com fundo azul (blueOne), e texto em branco
 /// - orange: estilo para botão com fundo azul (blueOne), e texto em branco
+
+enum ButtonStyleId: Int {
+    case whiteBlueButton = 0, blueButton, whiteOrangeButton, orangeButton
+}
+
 protocol ButtonStyle {
     func setup(button: Button)
 }

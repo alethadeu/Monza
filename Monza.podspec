@@ -17,6 +17,9 @@ Pod::Spec.new do |spec|
   spec.author       = { "alethadeu" => "alexandre.thadeu@icarros.com.br" }
   spec.platform     = :ios, "11.0"
   spec.source       = { :git => "https://github.com/alethadeu/Monza.git", :tag => "#{spec.version}" }
-  spec.source_files = "Monza/**/*"
+  spec.source_files = "Monza/Resources/*"
+  spec.requires_arc = true
+  spec.swift_version= '4.0'
+  spec.xcconfig     = { 'SWIFT_VERSION' => '4.0' }
 
 end

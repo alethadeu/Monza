@@ -13,7 +13,6 @@
 		EFF1132A2310579E0044BB31 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF113292310579E0044BB31 /* Button.swift */; };
 		EFF11330231059360044BB31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1132F231059360044BB31 /* Extensions.swift */; };
 		EFF11332231059AD0044BB31 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF11331231059AD0044BB31 /* Colors.swift */; };
-		EFF11336231068A40044BB31 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF11335231068A40044BB31 /* Test.storyboard */; };
 		EFF1133823106E5A0044BB31 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1133723106E5A0044BB31 /* ButtonStyle.swift */; };
 		EFF1133A231073140044BB31 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF11339231073140044BB31 /* Fonts.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +37,6 @@
 		EFF113292310579E0044BB31 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		EFF1132F231059360044BB31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EFF11331231059AD0044BB31 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		EFF11335231068A40044BB31 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		EFF1133723106E5A0044BB31 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		EFF11339231073140044BB31 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +87,6 @@
 				EFF1132B231057C40044BB31 /* Fonts */,
 				EFF1130F23104BDF0044BB31 /* Monza.h */,
 				EFF1131023104BDF0044BB31 /* Info.plist */,
-				EFF11335231068A40044BB31 /* Test.storyboard */,
 			);
 			path = Monza;
 			sourceTree = "<group>";
@@ -236,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF11336231068A40044BB31 /* Test.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

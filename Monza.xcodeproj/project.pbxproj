@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFB5FE632314774F00E17EE3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB5FE622314774F00E17EE3 /* TextField.swift */; };
+		EFB5FE652314789D00E17EE3 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB5FE642314789D00E17EE3 /* TextFieldEffects.swift */; };
 		EFF1131623104BDF0044BB31 /* Monza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF1130C23104BDF0044BB31 /* Monza.framework */; };
 		EFF1131B23104BDF0044BB31 /* MonzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1131A23104BDF0044BB31 /* MonzaTests.swift */; };
 		EFF1131D23104BDF0044BB31 /* Monza.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF1130F23104BDF0044BB31 /* Monza.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EFB5FE622314774F00E17EE3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		EFB5FE642314789D00E17EE3 /* TextFieldEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
 		EFF1130C23104BDF0044BB31 /* Monza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF1130F23104BDF0044BB31 /* Monza.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Monza.h; sourceTree = "<group>"; };
 		EFF1131023104BDF0044BB31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EFB5FE612314772400E17EE3 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				EFB5FE622314774F00E17EE3 /* TextField.swift */,
+				EFB5FE642314789D00E17EE3 /* TextFieldEffects.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
 		EFE83A2A2314417E000A79D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +149,7 @@
 		EFF1132D231057D40044BB31 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EFB5FE612314772400E17EE3 /* TextFields */,
 				EFF1132623104C000044BB31 /* Buttons */,
 			);
 			path = Components;
@@ -258,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB5FE652314789D00E17EE3 /* TextFieldEffects.swift in Sources */,
 				EFF1132A2310579E0044BB31 /* Button.swift in Sources */,
 				EFF1133A231073140044BB31 /* Fonts.swift in Sources */,
 				EFF1133823106E5A0044BB31 /* ButtonStyle.swift in Sources */,
+				EFB5FE632314774F00E17EE3 /* TextField.swift in Sources */,
 				EFF11332231059AD0044BB31 /* Colors.swift in Sources */,
 				EFF11330231059360044BB31 /* Extensions.swift in Sources */,
 			);

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NK0-xl-0Uo">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="q1g-2b-2qh">
+            <objects>
+                <viewController id="NK0-xl-0Uo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x2w-WC-2bg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-T4-9UP" customClass="Button" customModule="Monza" customModuleProvider="target">
+                                <rect key="frame" x="57" y="418" width="300" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Xnw-PK-3HP"/>
+                                    <constraint firstAttribute="height" constant="70" id="e48-sp-2K6"/>
+                                </constraints>
+                                <state key="normal" title="Teste">
+                                    <color key="titleColor" red="0.0" green="0.30980392159999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="style" value="whiteBlue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="size" value="small"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s8p-T4-9UP" firstAttribute="centerY" secondItem="j23-eX-uN1" secondAttribute="centerY" id="8sb-ZY-EeP"/>
+                            <constraint firstItem="s8p-T4-9UP" firstAttribute="centerX" secondItem="j23-eX-uN1" secondAttribute="centerX" id="eVV-Kh-ddU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="j23-eX-uN1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c39-93-Tbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="121"/>
+        </scene>
+    </scenes>
+</document>

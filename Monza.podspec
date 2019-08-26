@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Monza"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "This a test of Design System iCarros"
   spec.description  = "Monza is a Design System of iCarros, my first pod."
   spec.homepage     = "https://github.com/alethadeu/Monza"
@@ -17,6 +17,6 @@ Pod::Spec.new do |spec|
   spec.author       = { "alethadeu" => "alexandre.thadeu@icarros.com.br" }
   spec.platform     = :ios, "11.0"
   spec.source       = { :git => "https://github.com/alethadeu/Monza.git", :tag => "#{spec.version}" }
-  spec.source_files = "Monza/*.{h,m,swift}"
+  spec.source_files = "Monza/**/*"
 
 end

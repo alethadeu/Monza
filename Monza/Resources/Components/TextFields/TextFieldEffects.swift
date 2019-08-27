@@ -118,6 +118,8 @@ open class TextFieldEffects : UITextField {
      */
     @objc open func textFieldDidBeginEditing() {
         animateViewsForTextEntry()
+        activeBorder(true)
+        activeLabel()
     }
     
     /**
@@ -125,12 +127,21 @@ open class TextFieldEffects : UITextField {
      */
     @objc open func textFieldDidEndEditing() {
         animateViewsForTextDisplay()
+        activeBorder(false)
     }
     
     // MARK: - Interface Builder
     
     override open func prepareForInterfaceBuilder() {
         drawViewsForRect(frame)
+    }
+    
+    private func activeBorder(_ active: Bool) {
+        self.layer.borderColor =  active ? UIColor.Monza.Primary.blueOne.cgColor : UIColor.black.cgColor
+    }
+    
+    private func activeLabel() {
+        self.placeholderLabel.textColor = UIColor.Monza.Primary.blueOne
     }
 }
 

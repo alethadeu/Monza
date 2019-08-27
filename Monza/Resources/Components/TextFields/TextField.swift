@@ -10,46 +10,14 @@ import UIKit
 
 @IBDesignable
 open class TextField: TextFieldEffects {
-    /**
-     The color of the border when it has no content.
-     
-     This property applies a color to the lower edge of the control. The default value for this property is a clear color.
-     */
-    @IBInspectable dynamic open var borderInactiveColor: UIColor? {
-        didSet {
-            updateBorder()
-        }
-    }
-    
-    /**
-     The color of the border when it has content.
-     
-     This property applies a color to the lower edge of the control. The default value for this property is a clear color.
-     */
-    @IBInspectable dynamic open var borderActiveColor: UIColor? {
-        didSet {
-            updateBorder()
-        }
-    }
     
     /**
      The color of the placeholder text.
      This property applies a color to the complete placeholder string. The default value for this property is a black color.
      */
-    @IBInspectable dynamic open var placeholderColor: UIColor = .black {
+    @IBInspectable dynamic open var error: Bool = false {
         didSet {
-            updatePlaceholder()
-        }
-    }
-    
-    /**
-     The scale of the placeholder font.
-     
-     This property determines the size of the placeholder label relative to the font size of the text field.
-     */
-    @IBInspectable dynamic open var placeholderFontScale: CGFloat = 0.65 {
-        didSet {
-            updatePlaceholder()
+            updateComponents()
         }
     }
     
@@ -66,33 +34,23 @@ open class TextField: TextFieldEffects {
         }
     }
     
-    private let borderThickness: (active: CGFloat, inactive: CGFloat) = (active: 2, inactive: 0.5)
-    private let placeholderInsets = CGPoint(x: 0, y: 6)
-    private let textFieldInsets = CGPoint(x: 0, y: 12)
-    private let inactiveBorderLayer = CALayer()
-    private let activeBorderLayer = CALayer()
+    private let placeholderInsets = CGPoint(x: 8, y: 0)
     private var activePlaceholderPoint: CGPoint = CGPoint.zero
     
     // MARK: - TextFieldEffects
     
     override open func drawViewsForRect(_ rect: CGRect) {
         let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: rect.size.width, height: rect.size.height))
-        
         placeholderLabel.frame = frame.insetBy(dx: placeholderInsets.x, dy: placeholderInsets.y)
-        placeholderLabel.font = placeholderFontFromFont(font!)
-        
         updateBorder()
         updatePlaceholder()
-        
-        layer.addSublayer(inactiveBorderLayer)
-        layer.addSublayer(activeBorderLayer)
         addSubview(placeholderLabel)
     }
     
     override open func animateViewsForTextEntry() {
         if text!.isEmpty {
             UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: .beginFromCurrentState, animations: ({
-                self.placeholderLabel.frame.origin = CGPoint(x: 10, y: self.placeholderLabel.frame.origin.y)
+                self.placeholderLabel.frame.origin = CGPoint(x: 8, y: self.placeholderLabel.frame.origin.y)
                 self.placeholderLabel.alpha = 0
             }), completion: { _ in
                 self.animationCompletionHandler?(.textEntry)
@@ -106,7 +64,7 @@ open class TextField: TextFieldEffects {
             self.placeholderLabel.alpha = 1.0
         })
         
-        activeBorderLayer.frame = rectForBorder(borderThickness.active, isFilled: true)
+        
     }
     
     override open func animateViewsForTextDisplay() {
@@ -117,42 +75,6 @@ open class TextField: TextFieldEffects {
             }), completion: { _ in
                 self.animationCompletionHandler?(.textDisplay)
             })
-            
-            activeBorderLayer.frame = self.rectForBorder(self.borderThickness.active, isFilled: false)
-        }
-    }
-    
-    // MARK: - Private
-    
-    private func updateBorder() {
-        inactiveBorderLayer.frame = rectForBorder(borderThickness.inactive, isFilled: !isFirstResponder)
-        inactiveBorderLayer.backgroundColor = borderInactiveColor?.cgColor
-        
-        activeBorderLayer.frame = rectForBorder(borderThickness.active, isFilled: isFirstResponder)
-        activeBorderLayer.backgroundColor = borderActiveColor?.cgColor
-    }
-    
-    private func updatePlaceholder() {
-        placeholderLabel.text = placeholder
-        placeholderLabel.textColor = placeholderColor
-        placeholderLabel.sizeToFit()
-        layoutPlaceholderInTextRect()
-        
-        if isFirstResponder || text!.isNotEmpty {
-            animateViewsForTextEntry()
-        }
-    }
-    
-    private func placeholderFontFromFont(_ font: UIFont) -> UIFont! {
-        let smallerFont = UIFont(name: font.fontName, size: font.pointSize * placeholderFontScale)
-        return smallerFont
-    }
-    
-    private func rectForBorder(_ thickness: CGFloat, isFilled: Bool) -> CGRect {
-        if isFilled {
-            return CGRect(origin: CGPoint(x: 0, y: frame.height-thickness), size: CGSize(width: frame.width, height: thickness))
-        } else {
-            return CGRect(origin: CGPoint(x: 0, y: frame.height-thickness), size: CGSize(width: 0, height: thickness))
         }
     }
     
@@ -173,14 +95,46 @@ open class TextField: TextFieldEffects {
         
     }
     
-    // MARK: - Overrides
     
-    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.offsetBy(dx: textFieldInsets.x, dy: textFieldInsets.y)
+    // MARK: - Private
+    
+    private func updateBorder() {
+        self.layer.borderWidth = 1
+        self.layer.borderColor = !error ? UIColor.black.cgColor : UIColor.red.cgColor
+        self.layer.cornerRadius = 4
     }
     
+    private func updatePlaceholder() {
+        placeholderLabel.text = placeholder
+        placeholderLabel.textColor = !error ? UIColor.Monza.Primary.blueOne: UIColor.red
+        placeholderLabel.font =  UIFont.HelveticaNeue(.bold, size: 11)
+        placeholderLabel.sizeToFit()
+        
+        layoutPlaceholderInTextRect()
+        
+        if isFirstResponder || text!.isNotEmpty {
+            animateViewsForTextEntry()
+        }
+    }
+    
+    public func updateComponents() {
+        updateBorder()
+        updatePlaceholder()
+    }
+    
+    // MARK: - Overrides
+    
+    let padding = UIEdgeInsets(top: 10, left: 8, bottom: 0, right: 8)
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.offsetBy(dx: textFieldInsets.x, dy: textFieldInsets.y)
+        return bounds.inset(by: padding)
+    }
+    
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
     }
     
 }

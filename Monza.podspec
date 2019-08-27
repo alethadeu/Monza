@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name                 = "Monza"
-  spec.version              = "0.0.5"
+  spec.version              = "0.0.6"
   spec.summary              = "This a test of Design System iCarros"
   spec.description          = "Monza is a Design System of iCarros, my first pod."
   spec.homepage             = "https://github.com/alethadeu/Monza"
